@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title></title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/dist/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/theme.css" rel="stylesheet">
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="70">
+<nav id="top-navbar" class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
+    <div class="container">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#toggleableContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <a class="navbar-brand" href="#">Vicent Bellés</a>
+
+        <div class="collapse navbar-collapse" id="toggleableContent">
+            <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+                <li class="nav-item"><a class="nav-link active" href="#home">Inicio <span
+                        class="sr-only">(current)</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">Proyectos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#inProgress">En desarrollo</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main class="container">
+
+    <section id="home">
+        <h1>Sobre mí</h1>
+        <hr>
+        <p>
+            Soy Vicent Bellés, de Castellón.
+        </p>
+        <p>
+            He cursado el Grado en Ingeniería informática en la Universitat Jaume I de
+            Castelló del 2012 al 2016, con la especialización de Ingeniería del
+            Software y con un minor en Computer Vision en la universidad NHL de
+            Leeuwarden, Países Bajos.
+        </p>
+        <p>
+            Mi primera experiencia con la programación fue cuando tenía 14 años y mi
+            hermano me introdujo al C. Dos años más tarde amplié mis conocimientos en C
+            con una asignatura de bachillerato, fue entonces cuando decidí que quería
+            estudiar informática.
+        </p>
+        <p>
+            El primer proyecto significativo que desarrollé durante la carrera fue en
+            el primer semestre de 3º, el proyecto Droids of Mordor. Gracias a este mini
+            videojuego que creé mi interés en este sector aumentó mucho, ya que me di
+            cuenta de lo que se podía llegar a conseguir con esfuerzo.
+        </p>
+        <p>
+            Desde el septiembre del 2016 he estado trabajando en el desarrollo de
+            herramientas informáticas para la empresa Transbellés, S.L. sin dejar de
+            lado algunos proyectos personales.
+        </p>
+    </section>
+    <section id="projects">
+        <h1>Proyectos</h1>
+        <hr>
+        <article id="dom">
+            <h2>Droids of Mordor</h2>
+            <div class="row">
+                <div class="col-lg-6 mt-2">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/0K1L_4Ur9gA"></iframe>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-2">
+                    <h3>
+                        Objetivo
+                    </h3>
+                    <p>
+                        Proyecto final de la asignatura de Gráficos y multimedia del primer
+                        semestre de 3º del Grado en Ingeniería Informática. El objetivo del
+                        proyecto era crear un entorno 3D con cierta interacción utilizando C y GLUT
+                        únicamente
+                    </p>
+                    <p>
+                        Como reto personal decidí darle mucha importancia a la interacción con el
+                        entornó y desarrollé un mini videojuego.
+                    </p>
+                    <h3>
+                        Tecnologías
+                    </h3>
+                    <p>
+                        La programación del videojuego la realicé en C++ (C solo no me servía,
+                        necesitaba un lenguaje orientado a objetos), utilizando la librería de
+                        OpenGL <a href="https://www.opengl.org/resources/libraries/glut/">GLUT</a>
+                        y la de carga de imágenes <a href="http://openil.sourceforge.net/">DevIL</a>.
+                    </p>
+                    <p>
+                        Tanto la cámara, las físicas, el mapa, el fuego y la mayoría de las figuras
+                        son implementaciones propias (a excepción de los droides, las naves y el
+                        árbol).
+                    </p>
+                </div>
+                <div class="collapse container mt-2" id="domContent">
+                    <h3>
+                        Descripción
+                    </h3>
+                    <h4>
+                        Cámara
+                    </h4>
+                    <p>
+                        La cámara sigue de forma predeterminada al personaje principal en una
+                        distancia ajustable, también tiene la opción de desacoplarse del personaje
+                        y volar libre por el mapa para poder analizar mejor el mundo.
+                    </p>
+                    <p>
+                        La implementación de la cámara fue lo que más tiempo invertí ya que
+                        necesité mucho tiempo de investigación y aprender sobre coordenadas polares
+                        para poder hacer mi propia implementación.
+                    </p>
+                    <h4>
+                        Mapa
+                    </h4>
+                    <p>
+                        El mapa está creado a partir de una imagen en escala de grises, donde el
+                        color de cada pixel corresponde a una altura en cada punto del mapa.
+                    </p>
+                    <p>
+                        Una vez se obtienen los vértices a partir de la imagen se calculan las
+                        normales para poder aplicarle efectos de iluminación.
+                    </p>
+                    <h4>
+                        Personaje principal R2-D2
+                    </h4>
+                    <p>
+                        El personaje puede desplazarse por el mapa, saltar, disparar y activar un
+                        escudo. Está formado por figuras de revolución, los prismas también son
+                        figuras de revolución de 4 caras.
+                    </p>
+                    <p>
+                        Los disparos pueden colisionar con los enemigos para eliminarlos. El escudo
+                        se puede activar en cualquier momento y evita cualquier disparo de los
+                        enemigos, pero también impide que pueda disparar
+                    </p>
+                    <h4>
+                        Enemigos
+                    </h4>
+                    <p>
+                        Hay dos tipos de enemigos, los androides y los droidekas. Modifiqué las
+                        figuras para descomponerlas, cargar las diferentes partes por separado y
+                        poder articularlas para caminar.
+                    </p>
+                    <p>
+                        Los enemigos tienen unos puntos de vida, al recibir un disparo, durante un
+                        instante cambian de color en función de la vida que les falte.
+                    </p>
+                    <p>
+                        Los androides mueren al tercer disparo, su punto de reaparición se
+                        encuentra en las naves y la torre y vuelven a reagruparse a su posición del
+                        escuadrón. Al acercarse te persiguen durante una distancia, cuando te
+                        pierden la pista vuelven a su posición.
+                    </p>
+                    <p>
+                        Los droidekas mueren al quinto disparo. Te persiguen por todo el mapa y
+                        tienen un escudo que evita todo el daño, lo pueden activar al disparar,
+                        pero no lo pueden activar al moverse, por lo que para matarlos hay que
+                        separarse de ellos y dispararles desde lejos. Sus puntos de reaparición son
+                        las naves y la torre.
+                    </p>
+                    <h4>
+                        Sistema de partículas
+                    </h4>
+                    <p>
+                        Para poder realizar el efecto del fuego y el de la propulsión de R2-D2 al
+                        saltar implementé un sistema de partículas donde cada partícula es un
+                        elemento bidimensional enfocado siempre de forma perpendicular a la cámara
+                        y tiene un tiempo de vida, un color en función de su vida, una velocidad y
+                        dirección.
+                    </p>
+                    <h4>
+                        Otros elementos
+                    </h4>
+                    <p>
+                        Las plantas que se pueden ver por el mapa están formadas partir de dos
+                        elementos bidimensionales colocados perpendicularmente de forma que le da
+                        sensación de volumen a la planta.
+                    </p>
+                    <p>
+                        La torre con el ojo también está formada a partir de figuras de revolución,
+                        el ojo se mueve por todo el mapa con su haz de luz, pero no tiene ningún
+                        efecto al tocarte.
+                    </p>
+                    <h3>
+                        Conclusiones
+                    </h3>
+                    <p>
+                        Es el proyecto de la carrera, sin contar el de final de carrera, al que más
+                        tiempo le he dedicado, pero con el que más he aprendido, le invertí muchas
+                        horas de investigación para lograr reproducir la idea que tenía en la
+                        cabeza.
+                    </p>
+                    <p>
+                        Con este proyecto me introduje al mundo del desarrollo de videojuegos,
+                        sobre todo en cuanto a la programación, ya que no hice uso de ninguna
+                        librería para darle físicas al mundo ni para animar los elementos.
+                    </p>
+                    <p>
+                        Tengo pensado rehacer el proyecto, con las tecnologías que conozco ahora y
+                        hacerlo multijugador.
+                    </p>
+                </div>
+                <button class="btn btn-default mx-auto mt-2" type="button" data-toggle="collapse"
+                        data-target="#domContent"
+                        aria-expanded="false" aria-controls="collapseExample">
+                    <span class="collapsed">Mostrar más</span><span class="expanded">Mostrar menos</span>
+                </button>
+            </div>
+        </article>
+        <article id="ditchInspection">
+            <h2>Ditch Inspection</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Z13tpzb6ut0"></iframe>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h3>
+                        Objetivo
+                    </h3>
+                    <p>
+                        El objetivo de este proyecto era crear una simulación de la automatización
+                        de la detección de los niveles de vegetación y suciedad sobre el agua de
+                        los canales, para poder detectar los puntos que necesitan ser limpiados y
+                        evitar que dejen de fluir.
+                    </p>
+                    <p>
+                        El proyecto es el resultado de 6 meses de investigación en la universidad <a
+                            href="https://www.nhl.nl/">NHL de Leeuwarden</a>, Países Bajos, cursando
+                        un Minor en <strong>Computer Vision</strong>, durante mi estancia con beca
+                        Erasmus.
+                    </p>
+                    <h3>
+                        Tecnologías
+                    </h3>
+                    <p>
+                        La simulación la realicé con el entorno de proceso de imágenes <a
+                            href="http://www.vdlmv.nl/visionlab">VisionLab</a>. Este entorno permite
+                        la automatización de funciones de procesado de imágenes mediante un
+                        lenguaje de script que permite llamar a funciones programadas en <strong>C++</strong>. También
+                        utilicé Visual Studio para la extensión de
+                        algunas funciones no implementadas.
+                    </p>
+                </div>
+                <div class="collapse container mt-2" id="ditchInspectionContent">
+                    <h3>
+                        Descripción
+                    </h3>
+                    <p>
+                        En el video se muestra a un dron volando sobre unos canales holandeses.
+                        Estas imágenes de muestra forman parte del conjunto del dataset analizado
+                        para la detección del canal y sus elementos.
+                    </p>
+                    <p>
+                        El proceso iterativo que realiza el dron es el siguiente:
+                    </p>
+                    <ul>
+                        <li>Elección y posicionamiento de las imágenes en función de la posición deldron</li>
+                        <li>Seleccionar el área que cubriría la cámara del dron</li>
+                        <li>Binarización de la imagen</li>
+                        <li>Obtención del ángulo del canal</li>
+                        <li>Cálculo de la nueva posición del dron</li>
+                    </ul>
+                    <p>
+                        La binarización de la imagen consiste en la detección y de los elementos
+                        del canal, que son el agua y la vegetación o suciedad. Este proceso
+                        requiere de operaciones matriciales en las que en función del color y de la
+                        forma discierne si es canal, vegetación o elementos externos al canal.
+                    </p>
+                </div>
+                <button class="btn btn-default mx-auto mt-2" type="button" data-toggle="collapse"
+                        data-target="#ditchInspectionContent"
+                        aria-expanded="false" aria-controls="collapseExample">
+                    <span class="collapsed">Mostrar más</span><span class="expanded">Mostrar menos</span>
+                </button>
+            </div>
+
+        </article>
+        <article id="bicicas">
+            <h2>Bicicas (no oficial)</h2>
+            <div class="row">
+                <div class="col-lg-6">
+
+                    <div id="carouselBicicas" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselBicicas" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselBicicas" data-slide-to="1"></li>
+                            <li data-target="#carouselBicicas" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                                <img class="d-block img-fluid carousel-image"
+                                     src="https://lh3.googleusercontent.com/ozucaR3TlMWbj0NaS7XAbFrlZdVeqyASAPTcwrfP64qMEV3IusHQTeKTM7CKG2xY7Fo=h900-rw"
+                                     alt="Generación de código">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block img-fluid carousel-image"
+                                     src="https://lh3.googleusercontent.com/zjRsNPD3D-Di81qVO_TUVyXQNKv7byUkcJm3-WpCNVcuCCt55zAZu9rfmlZxeK6Ya20w=h900-rw"
+                                     alt="Disponibilidad y favoritos">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block img-fluid carousel-image"
+                                     src="https://lh3.googleusercontent.com/tHLxlr6CzHZ93hZbOQvEvTy0X3TavuQix8RZm2MmeFaOSKqc1V7yl7OlN1Uq2JeJfg=h900-rw"
+                                     alt="Mapa">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev " href="#carouselBicicas" role="button" data-slide="prev">
+                            <i class="fa fa-chevron-left" style="color: #222;  text-shadow: 1px 1px 1px #ccc;"
+                               aria-hidden="true"></i>
+                            <!--<span class="carousel-control-prev-icon"  aria-hidden="true"></span>-->
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselBicicas" role="button" data-slide="next">
+                            <i class="fa fa-chevron-right" style="color: #222;  text-shadow: 1px 1px 1px #ccc;"
+                               aria-hidden="true"></i>
+                            <!--<span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="col-lg-6">
+                    <h3>
+                        Objetivo
+                    </h3>
+                    <p>
+                        El servicio público de bicicletas de Castellón no tenía una aplicación
+                        oficial donde poder ver la disponibilidad de las bicicletas en los
+                        diferentes puntos. Había una aplicación no oficial pero que no era de mi
+                        agrado. Decidí entonces hacer la mía propia.
+                    </p>
+                    <p>
+                        Meses más tarde salió la oficial de Bicicas, al analizarla y preguntar a
+                        otros usuarios me di cuenta de que no estábamos muy conformes, iba lenta y
+                        no se mostraba correctamente en todos los dispositivos, pero que tenía
+                        alguna funcionalidad que estaba bastante bien. Mejoré mi aplicación y la
+                        subí a la <a href="https://play.google.com/store/apps/details?id=com.tcn.bicicas&hl=es">Play
+                        Store</a>.
+                    </p>
+                    <p>
+                        Mi aplicación no tiene ningún vínculo comercial con Bicicas.
+                    </p>
+                    <h3>
+                        Tecnologías
+                    </h3>
+                    <p>
+                        La aplicación esta para el sistema operativo <strong>Android</strong> por
+                        lo que está desarrollada en <strong>Java</strong>. También he utilizado
+                        librerías como <a href="https://github.com/ReactiveX/RxJava">RxJava</a>, <a
+                            href="https://github.com/ReactiveX/RxAndroid">RxAndroid</a> y <a
+                            href="http://square.github.io/okhttp/">OkHttp</a> para las peticiones
+                        http.
+                    </p>
+                </div>
+
+                <a class="playButton"
+                   href='https://play.google.com/store/apps/details?id=com.tcn.bicicas&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'
+                   style="margin: auto"><img
+                        width="200px" alt='Disponible en Google Play'
+                        src='https://play.google.com/intl/en_us/badges/images/generic/es_badge_web_generic.png'/></a>
+            </div>
+        </article>
+        <article id="brickedSky">
+            <h2>BrickedSky</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/cojkZ1VyATw"></iframe>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h3>
+                        Objetivo
+                    </h3>
+                    <p>
+                        Se trata de un juego sencillo para <strong>Android</strong> creado con <a
+                            href="https://libgdx.badlogicgames.com/">Libgdx</a> que permite probar
+                        tu agilidad.
+                    </p>
+                    <h3>
+                        Tecnologías
+                    </h3>
+                    <p>
+                        El juego está programado en Libgdx, framework de Java multiplataforma y
+                        está publicado en la
+                        <a href="https://play.google.com/store/apps/details?id=com.tcn.bricksky">Play Store</a> de
+                        Google.
+                    </p>
+                </div>
+                <a class="playButton"
+                   href='https://play.google.com/store/apps/details?id=com.tcn.bricksky' style="margin: auto"><img
+                        width="200px" alt='Disponible en Google Play'
+                        src='https://play.google.com/intl/en_us/badges/images/generic/es_badge_web_generic.png'/></a>
+            </div>
+        </article>
+        <article id="hackathon">
+            <h2>Hackathon Castellón 2016</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div id="carouselHackathon" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselHackathon" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselHackathon" data-slide-to="1"></li>
+                            <li data-target="#carouselHackathon" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                                <img class="d-block img-fluid carousel-image"
+                                     src="https://lh3.googleusercontent.com/3hqL3GY3w2riGlbhttCbRm6gd-UcvQ0e5x3GgiIcbRHV7OFIoE1DjdiolvQ-njkpbIi6=h900-rw"
+                                     alt="Ciudades">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block img-fluid carousel-image"
+                                     src="https://lh3.googleusercontent.com/xlD956x9p4EEoFWpb960EnDvWOqm0iPds2WpLLzbcv1wuJY0FVHArA28ittcithsUNs=h900-rw"
+                                     alt="Mapa">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block img-fluid carousel-image"
+                                     src="https://lh3.googleusercontent.com/vy7tsfKTbuZQjVnxdxxNvmhZQq9cZiJEJKin_nKCjgt8LIfhdLaHw2r3UcBObWMRmg=h900-rw"
+                                     alt="Reto">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev " href="#carouselHackathon" role="button" data-slide="prev">
+                            <i class="fa fa-chevron-left" style="color: #222;  text-shadow: 1px 1px 1px #ccc;"
+                               aria-hidden="true"></i>
+                            <!--<span class="carousel-control-prev-icon"  aria-hidden="true"></span>-->
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselHackathon" role="button" data-slide="next">
+                            <i class="fa fa-chevron-right" style="color: #222;  text-shadow: 1px 1px 1px #ccc;"
+                               aria-hidden="true"></i>
+                            <!--<span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="col-lg-6">
+                    <h3>
+                        Objetivo
+                    </h3>
+                    <p>
+                        Hackathon se trata de concurso destinado a informáticos en el que se
+                        plantean diferentes retos. El reto que elegimos consistía en crear una
+                        aplicación que ayudase al usuario a conocer una ciudad de forma
+                        interactiva. El tiempo del reto era de 3 días.
+                    </p>
+                    <p>
+                        Participamos como grupo 5 compañeros de la carrera y desarrollamos una
+                        aplicación multiplataforma sincronizada con una base de datos remota.
+                    </p>
+                    <h3>
+                        Tecnologías
+                    </h3>
+                    <p>
+                        La aplicación la desarrollamos con <a href="http://ionic.io/2">Ionic 2</a>,
+                        que utiliza el framework <a href="https://angular.io/">Angular 2</a> y
+                        permite la creación de aplicaciones multiplataforma mediante Typescript.
+                    </p>
+                    <p>
+                        La aplicación tenía integrado el mapa de Google, para poder mostrar al
+                        usuario la ciudad.
+                    </p>
+                    <p>
+                        Utilizamos <a href="https://firebase.google.com/">Firebase</a> como base de
+                        datos remota para poder guardar la puntuación del jugador y los retos, de
+                        forma que se pueden actualizar, añadiendo nuevos o incluso añadiendo nuevas
+                        ciudades donde pueda participar el usuario.
+                    </p>
+                    <p>La aplicación está publicada en la <a
+                            href="https://play.google.com/store/apps/details?id=com.ionicframework.hackathoncastellon2016frontend171878">Play
+                        Store</a> de Google.</p>
+                </div>
+                <div style="width: 100%; text-align: center">
+                    <a class="playButton"
+                       href='https://play.google.com/store/apps/details?id=com.ionicframework.hackathoncastellon2016frontend171878'
+                       style="margin: auto"><img
+                            width="200px" alt='Disponible en Google Play'
+                            src='https://play.google.com/intl/en_us/badges/images/generic/es_badge_web_generic.png'/></a>
+                </div>
+                <div class="collapse container mt-2" id="hackathonContent">
+                    <h3>
+                        Descripción
+                    </h3>
+                    <p>
+                        El usuario tiene que crearse una cuenta o iniciar sesión con su cuenta de Google.
+                    </p>
+                    <p>
+                        La aplicación tiene como vista principal el mapa de la ciudad y tiene
+                        marcadores con los retos disponibles.
+                    </p>
+                    <p>
+                        Hay diferentes tipos de retos, en algunos tienes que contestar preguntas
+                        sobre cosas de interés de la zona del reto, en otros deberás encontrar un
+                        código QR en la zona y escanearlo para completar el reto.
+                    </p>
+                    <p>
+                        La aplicación está preparada para varias ciudades, el usuario puede
+                        seleccionar en que ciudad quiere participar y va acumulando puntos al
+                        acertar los retos.
+                    </p>
+                </div>
+
+                <button class="btn btn-default mx-auto mt-2" type="button" data-toggle="collapse"
+                        data-target="#hackathonContent"
+                        aria-expanded="false" aria-controls="collapseExample">
+                    <span class="collapsed">Mostrar más</span><span class="expanded">Mostrar menos</span>
+                </button>
+
+
+            </div>
+
+        </article>
+        <article id="datathon">
+            <h2>Datathon Cajamar 2017</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <img src="images/datathon.png" class="img-fluid" alt="Datathon">
+                    <p class="mt-4">
+                        Enlace web: <a href="https://datavizuji.firebaseapp.com/">datavizuji.firebaseapp.com</a>
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <h3>
+                        Objetivo
+                    </h3>
+                    <p>
+                        El
+                        <a href="http://www.cajamardatalab.com/datathon-cajamar-universityhack-2017/">
+                            Datathon de Cajamar
+                        </a>
+                        tenía dos retos, elegimos el reto de visualización de datos. El objetivo
+                        del reto era crear una aplicación para mostrar de forma interactiva los
+                        datos generados por las compras con tarjeta de los clientes de Cajamar de
+                        la provincia de Valencia en comercios de la ciudad de Valencia.
+                        Participamos 3 compañeros de la carrera.
+                    </p>
+                    <p>
+                        El dataset contenía el código postal del cliente o clientes y del comercio,
+                        el sector del comercio, la fecha, la franja horaria, el importe y el número
+                        de operaciones.
+                    </p>
+                    <p>
+                        Para obtener mejor puntuación en el reto era necesario añadir fuentes
+                        externas de datos. Añadimos la climatología y la población por código
+                        postal de la provincia de Valencia.
+                    </p>
+                    <h3>
+                        Tecnologías
+                    </h3>
+                    <p>
+                        Las tecnologías utilizadas son <a href="https://www.tableau.com/">Tableau</a>, un software de
+                        visualización de datos, que nos permitió generar un dashboard completo con
+                        mapas y filtros para la visualización del dataset.
+                    </p>
+                    <p>
+                        Para enriquecer el dataset con datos externos utilizamos <a
+                            href="https://www.knime.org/">Knime</a>, además nos permitió realizar un
+                        análisis de los datos.
+                    </p>
+                </div>
+                <div class="collapse container mt-2" id="datathonContent">
+                    <h3>
+                        Descripción
+                    </h3>
+                    <p>
+                        El dashboard permite filtrar sobre dos mapas, el de la izquierda para los
+                        clientes y el de la derecha para los comercios, todos los datos que
+                        contenía en el dataset y los que integramos. Los mapas también sirven de
+                        filtro, pudiendo seleccionar el o los códigos postales de interés para
+                        analizar.
+                    </p>
+                    <p>
+                        El proyecto generado con Tableau lo publicamos mediante <a href="https://firebase.google.com/">Firebase</a>
+                        en formato
+                        web de forma pública, mostrando además un tutorial de cómo utilizar todas
+                        las funciones del dashboard.
+                    </p>
+                </div>
+                <button class="btn btn-default mx-auto mt-2" type="button" data-toggle="collapse"
+                        data-target="#datathonContent"
+                        aria-expanded="false" aria-controls="collapseExample">
+                    <span class="collapsed">Mostrar más</span><span class="expanded">Mostrar menos</span>
+                </button>
+            </div>
+
+        </article>
+    </section>
+
+    <section id="inProgress">
+        <h1>En desarrollo</h1>
+        <hr>
+        <article id="squareBattles">
+            <h2>SquareBattle</h2>
+            <div class="row">
+                <div class="col-lg-6" style="text-align: center">
+                    <img width="65%" src="images/proximamente-video.png" class="img-fluid" alt="SquareBattles">
+                </div>
+                <div class="col-lg-6">
+                    <h3>
+                        Objetivo
+                    </h3>
+                    <p>
+                        SquareBattles se trata de un juego <strong>online</strong> de lucha 1vs1
+                        tipo arena en el que controlas un cuadrado y tienes que enviar al enemigo
+                        de la plataforma.
+                    </p>
+                    <p>
+                        Por ahora he implementado las bases, eligiendo las tecnologías con las que
+                        desarrollar y he logrado realizar la sincronización de las físicas entre
+                        cliente y servidor teniendo en cuenta el retraso de las comunicaciones de
+                        los dispositivos móviles.
+                    </p>
+                    <h3>
+                        Tecnologías
+                    </h3>
+                    <p>
+                        Estoy desarrollando el proyecto con <a href="https://libgdx.badlogicgames.com/">Libgdx</a> para
+                        la parte del
+                        cliente ya que ira destinado principalmente a móviles Android, con la
+                        posibilidad de extenderse a IOS.
+                    </p>
+                    <p>
+                        El servidor por ahora es en <strong>Java</strong>, para poder aprovechar
+                        algunos recursos del cliente, además es un lenguaje bastante apropiado para
+                        el prototipado ya que es el lenguaje con el que tengo más experiencia.
+                    </p>
+                    <p>
+                        La tarea más pesada por parte del servidor es el cálculo de las físicas.
+                        Para esto utilizo <a href="http://box2d.org/">Box2D</a>, escrito en <strong>C++</strong>,
+                        utilizado tanto en el cliente como en el servidor
+                        mediante <strong>JNI</strong>.
+                    </p>
+                </div>
+            </div>
+        </article>
+    </section>
+
+</main>
+<footer class="bd-footer bg-faded">
+    <div class="container">
+        <p>vicentbelles@gmail.com</p>
+        <p></p>
+        <p>©2017</p>
+    </div>
+</footer>
+
+
+<script src="js/dist/jquery-3.2.1.min.js"></script>
+<script src="js/dist/tether.min.js"></script>
+<script src="js/dist/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
